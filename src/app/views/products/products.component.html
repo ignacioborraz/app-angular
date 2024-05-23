@@ -1,0 +1,5 @@
+<div *ngFor="let item of filteredProducts" class="w-[300px] bg-gray-200 p-3 m-3">
+  <p>{{item.title}}</p>
+  <p>${{item.price}}</p>
+  <a routerLink="/products/{{item._id}}" class="bg-black text-white cursor-pointer p-2">DETAILS</a>
+</div>

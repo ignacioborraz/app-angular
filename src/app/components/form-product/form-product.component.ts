@@ -11,10 +11,14 @@ import { Product } from '../../interfaces/product';
 export class FormProductComponent {
   title: string = 'title';
   newProduct: Product = {
+    _id: '',
     title: '',
     description: '',
     stock: 0,
     price: 0,
+    images: [''],
+    colors: [''],
+    onsale: false,
   };
   placeholderTitle: string = 'Enter a title';
   valueButton: string = 'Register the product!';
@@ -22,10 +26,14 @@ export class FormProductComponent {
     this.placeholderTitle = 'Type a title please!!!';
     alert(this.newProduct.title + ' registered!');
     this.newProduct = {
+      _id: '',
       title: '',
       description: '',
       stock: 0,
       price: 0,
+      images: [''],
+      colors: [''],
+      onsale: false,
     };
   };
 }

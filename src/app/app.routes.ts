@@ -8,8 +8,9 @@ export const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       { path: '', component: HomeComponent },
-      //{ path: 'new', component: FormComponent },
       { path: 'new', loadComponent: ()=> import('./views/form-view/form-view.component').then(res=>res.FormViewComponent) },
+      { path: 'products', loadComponent: ()=> import('./views/products/products.component').then(res=>res.ProductsComponent) },
+      { path: 'products/:pid', loadComponent: ()=> import('./views/product-details/product-details.component').then(res=>res.ProductDetailsComponent) },
       //{ path: '**', component: NotFoundComponent },
       { path: '**', loadComponent: ()=> import('./views/not-found/not-found.component').then(res=>res.NotFoundComponent)}
     ],
