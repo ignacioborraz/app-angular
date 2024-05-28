@@ -13,20 +13,21 @@ import { CommonModule } from '@angular/common';
 export class ProductsComponent implements OnInit {
   onsale = false;
   price = 'asc';
+  all: Array<Product> = products
   filteredProducts: Array<Product> = [];
   constructor(private route: ActivatedRoute) {}
   ngOnInit(): void {
     this.route.queryParamMap.subscribe((queries) => {
       this.onsale = queries.get('onsale') === 'true' ? true : false;
       this.price = queries.get('price') || 'asc';
-      //console.log("ONSALE: "+this.onsale);
-      //console.log("PRICE: "+this.price);
+      console.log("ONSALE: "+this.onsale);
+      console.log("PRICE: "+this.price);
     });
     this.filteredProducts = products
       .filter((each) => each.onsale === this.onsale)
       .sort((a, b) =>
         this.price === 'asc' ? a.price - b.price : b.price - a.price
       );
-    //console.log(this.filteredProducts);
+    console.log(this.filteredProducts);
   }
 }
