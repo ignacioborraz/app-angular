@@ -4,17 +4,12 @@
   <a routerLink="/products/{{item._id}}" class="bg-black text-white cursor-pointer p-2">DETAILS</a>
 </div> -->
 
-<section class="flex flex-col justify-center">
-  <h2 class="text-[20px] text-center py-2">PRODUCTOS FUERA DE OFERTA (POR DEFECTO)</h2>
+<section class="flex flex-col justify-center items-center">
+  <h2 class="text-[20px] text-center py-2">PRODUCTOS EN OFERTA</h2>
   <article class="flex flex-wrap justify-evenly items-center">
     @for (each of filteredProducts; track each._id; let index = $index, impar = $odd, total = $count) {
     @if (impar) {
-    <div class="w-[300px] bg-red-200 p-3 m-3">
-      <h3 class="text-[14px] font-bold">INDEX: {{index}}/{{total}}</h3>
-      <p>{{each.title}}</p>
-      <p>${{each.price}}</p>
-      <a routerLink="/products/{{each._id}}" class="bg-black text-white cursor-pointer p-2">DETAILS</a>
-    </div>
+    <red-card [index]="index" [total]="total" [each]="each" />
     } @else {
     <div class="w-[300px] bg-blue-300 p-3 m-3">
       <h3 class="text-[14px] font-bold">INDEX: {{index}}/{{total}}</h3>
@@ -26,30 +21,10 @@
     }
   </article>
   <h2 class="text-[20px] text-center py-2">TODOS LOS PRODUCTOS</h2>
+  <search-input (salida)="queHagoConLaRecepcion($event)" />
   <article class="flex flex-wrap justify-evenly items-center">
-    @for (each of all; track each._id; let index = $index, primero = $first, ultimo = $last) {
-    @if (primero) {
-    <div class="w-[300px] bg-red-200 p-3 m-3">
-      <h3 class="text-[14px] font-bold">INDEX: {{index}}</h3>
-      <p>{{each.title}}</p>
-      <p>${{each.price}}</p>
-      <a routerLink="/products/{{each._id}}" class="bg-black text-white cursor-pointer p-2">DETAILS</a>
-    </div>
-    } @else if (ultimo) {
-    <div class="w-[300px] bg-blue-300 p-3 m-3">
-      <h3 class="text-[14px] font-bold">INDEX: {{index}}</h3>
-      <p>{{each.title}}</p>
-      <p>${{each.price}}</p>
-      <a routerLink="/products/{{each._id}}" class="bg-black text-white cursor-pointer p-2">DETAILS</a>
-    </div>
-    } @else {
-    <div class="w-[300px] bg-gray-200 p-3 m-3">
-      <h3 class="text-[14px] font-bold">INDEX: {{index}}</h3>
-      <p>{{each.title}}</p>
-      <p>${{each.price}}</p>
-      <a routerLink="/products/{{each._id}}" class="bg-black text-white cursor-pointer p-2">DETAILS</a>
-    </div>
-    }
+    @for (each of all; track each._id; let index = $index, total = $count) {
+    <red-card [index]="index" [total]="total" [each]="each" />
     }
   </article>
   <h2 class="text-[20px] text-center py-2">PRODUCTOS QUE VALEN MAS DE 100.000 Y MENOS DE 200.00</h2>

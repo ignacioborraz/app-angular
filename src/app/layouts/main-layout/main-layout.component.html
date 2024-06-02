@@ -2,7 +2,7 @@
   <nav class="w-full p-2 py-4 bg-purple-900 text-center">
     <a class="p-2 bg-purple-400 m-2" routerLink="/">INICIO</a>
     <a class="p-2 bg-purple-400 m-2" routerLink="/new">NUEVO PRODUCTO</a>
-    <a class="p-2 bg-purple-400 m-2" routerLink="/products">PRODUCTOS</a>
+    <a class="p-2 bg-purple-400 m-2" routerLink="/products" [queryParams]="{onsale: true}">EN OFERTA</a>
   </nav>
   <router-outlet />
   <article>
