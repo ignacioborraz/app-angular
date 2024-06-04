@@ -4,7 +4,7 @@ export interface Product {
   description?: string;
   price: number;
   stock: number;
-  images: Array<string>;
-  colors: Array<string>;
+  images: Array<string> | string;
+  colors: Array<string> | string;
   onsale: boolean;
 }

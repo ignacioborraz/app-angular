@@ -1,8 +1,21 @@
 <form class="w-[400px] flex flex-col items-center p-[20px]">
-  <input [(ngModel)]="newProduct.title" class="w-full p-[10px] text-[16px] my-[10px]" type="text" [name]="title" id={{title}} [placeholder]="placeholderTitle">
-  <input [(ngModel)]="newProduct.description" class="w-full p-[10px] text-[16px] my-[10px]" type="text" name="description" id="description" placeholder="Enter a description (optional)">
-  <input [(ngModel)]="newProduct.price" class="w-full p-[10px] text-[16px] my-[10px]" type="number" name="price" id="price" placeholder="0">
-  <input [(ngModel)]="newProduct.stock" class="w-full p-[10px] text-[16px] my-[10px]" type="number" name="stock" id="stock" placeholder="0">
-  <input (click)="alertTitle()" class="text-white bg-red-400 w-full p-[10px] text-[16px] my-[10px] cursor-pointer"
+  <input [(ngModel)]="newProduct.title" class="w-full p-[10px] text-[16px] my-[10px]" type="text" [name]="title"
+    id={{title}} [placeholder]="placeholderTitle">
+  <input [(ngModel)]="newProduct.description" class="w-full p-[10px] text-[16px] my-[10px]" type="text"
+    name="description" id="description" placeholder="Enter a description (optional)">
+  <input [(ngModel)]="newProduct.price" class="w-full p-[10px] text-[16px] my-[10px]" type="number" name="price"
+    id="price" placeholder="0">
+  <input [(ngModel)]="newProduct.stock" class="w-full p-[10px] text-[16px] my-[10px]" type="number" name="stock"
+    id="stock" placeholder="0">
+  <input [(ngModel)]="newProduct.images" class="w-full p-[10px] text-[16px] my-[10px]" type="text" name="images"
+    id="images" placeholder="Enter URL photos">
+  <input [(ngModel)]="newProduct.colors" class="w-full p-[10px] text-[16px] my-[10px]" type="text" name="colors"
+    id="colors" placeholder="Enter colors">
+  <fieldset class="flex">
+    <label for="onsale">On sale?</label>
+    <input [(ngModel)]="newProduct.onsale" class="w-full p-[10px] text-[16px] my-[10px]" type="checkbox" name="onsale"
+      id="onsale">
+  </fieldset>
+  <input (click)="create()" class="text-white bg-red-400 w-full p-[10px] text-[16px] my-[10px] cursor-pointer"
     type="button" [value]="valueButton">
 </form>
