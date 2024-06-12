@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './green-card.component.html',
-  styleUrl: './green-card.component.css'
 })
 export class GreenCardComponent {
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../interfaces/product';
-import { v4 as uuid } from "uuid"
+import { v4 as uuid } from 'uuid';
 
 @Injectable({
   providedIn: 'root',
@@ -323,17 +323,21 @@ export class ProductsService {
       );
     return filteredProducts;
   }
+  readOne(index: number) {
+    const one: Product = this.products[index];
+    return one;
+  }
   create(data: Product) {
-    if (typeof data.colors === "string") {
-      data.colors = data.colors.split(",")
+    if (typeof data.colors === 'string') {
+      data.colors = data.colors.split(',');
     }
-    typeof data.images === "string" &&  (data.images = data.images.split(","))
+    typeof data.images === 'string' && (data.images = data.images.split(','));
     data._id = uuid();
     console.log(data);
     if (data.title && data.price && data.stock) {
-      this.products.push(data)
-      return true
+      this.products.push(data);
+      return true;
     }
-    return false
+    return false;
   }
 }

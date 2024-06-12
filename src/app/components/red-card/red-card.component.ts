@@ -7,7 +7,6 @@ import { Product } from '../../interfaces/product';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './red-card.component.html',
-  styleUrl: './red-card.component.css'
 })
 export class RedCardComponent {
   @Input({ required: true }) index: number = 0

@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './gray-card.component.html',
-  styleUrl: './gray-card.component.css'
 })
 export class GrayCardComponent {
 
