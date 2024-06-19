@@ -10,16 +10,18 @@ import { Product } from '../../interfaces/product';
 })
 export class CarouselComponent {
   constructor(private service: ProductsService) {
+    const start = Date.now();
+    while (Date.now() - start < 5000) {}
     effect(()=>{
       this.product = this.service.readOne(this.slide());
-      console.log(this.slide());
+      //console.log(this.slide());
     })
   }
   slide = signal(0);
   product: Product = this.service.readOne(this.slide());
   next() {
     this.slide.update((val) => val + 1);
-    console.log(this.slide());
+    //console.log(this.slide());
   }
   first() {
     this.slide.set(0)
