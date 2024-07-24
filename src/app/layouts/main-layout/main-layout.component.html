@@ -1,20 +1,3 @@
-<div class="flex flex-col justify-between min-h-screen">
-  <nav class="w-full p-2 py-4 bg-purple-900 text-center">
-    <a class="p-2 bg-purple-400 m-2" routerLink="/">INICIO</a>
-    <a class="p-2 bg-purple-400 m-2" routerLink="/new">NUEVO PRODUCTO</a>
-    <a class="p-2 bg-purple-400 m-2" routerLink="/products" [queryParams]="{onsale: true}">EN OFERTA</a>
-  </nav>
+<div class="flex flex-col min-h-screen pt-[60px]">
   <router-outlet />
-  <article>
-    <p class="text-center bg-purple-700 text-white py-2"> SE VA A RENDERIZAR EN
-      @if(seRenderiza){ TRUE }
-      @else { FALSE }
-    </p>
-    @if(seRenderiza) { <p class="bg-purple-300">EN VERDADERO</p> }
-    @else { <p class="bg-red-400">EN FALSO</p> }
-    @if(numero<=10) { <p class="text-center">ES MENOR O IGUAL A 10</p> }
-      @else if (numero<50) { <p class="text-center">ES MAYOR A 10 y MENOR A 50</p> }
-        @else { <p class="text-center">ES MAYOR A 50</p> }
-  </article>
-  <footer class="p-2 bg-purple-900 text-white font-black text-center">FOOOTER</footer>
 </div>

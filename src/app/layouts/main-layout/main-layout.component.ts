@@ -5,10 +5,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-main-layout',
   standalone: true,
   imports: [RouterModule],
-  templateUrl: './main-layout.component.html',
-  styles: ``,
+  templateUrl: './main-layout.component.html'
 })
 export class MainLayoutComponent {
-  seRenderiza: boolean = false;
-  numero: number = 58
 }

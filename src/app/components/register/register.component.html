@@ -1,0 +1,15 @@
+<form class="w-[400px] flex flex-col items-center p-[20px]">
+  <input [(ngModel)]="newUser.name" class="w-full p-[10px] text-[16px] my-[10px]" type="text" name="name" id="name"
+    placeholder="Enter your name">
+  <input [(ngModel)]="newUser.email" class="w-full p-[10px] text-[16px] my-[10px]" type="email" name="email" id="email"
+    placeholder="Enter your email">
+  <input [(ngModel)]="newUser.password" class="w-full p-[10px] text-[16px] my-[10px]" type="password" name="password"
+    id="password" placeholder="Enter your password">
+  <input [(ngModel)]="newUser.age" class="w-full p-[10px] text-[16px] my-[10px]" type="number" name="age" id="age"
+    placeholder="12">
+  <input [(ngModel)]="newUser.avatar" class="w-full p-[10px] text-[16px] my-[10px]" type="url" name="avatar"
+    id="avatar" placeholder="Enter your photo (URL)">
+  <p>Have an account? Please <a class="text-purple-900 font-bold" routerLink="">log in</a>!</p>
+  <input (click)="register()" class="text-white bg-red-400 w-full p-[10px] text-[16px] my-[10px] cursor-pointer"
+    type="button" value="Register">
+</form>

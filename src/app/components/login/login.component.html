@@ -1,0 +1,9 @@
+<form class="w-[400px] flex flex-col items-center p-[20px]">
+  <input [(ngModel)]="user.email" class="w-full p-[10px] text-[16px] my-[10px]" type="email" name="email" id="email"
+    placeholder="Enter your email">
+  <input [(ngModel)]="user.password" class="w-full p-[10px] text-[16px] my-[10px]" type="password" name="password"
+    id="password" placeholder="Enter your password">
+  <p>Don't you have an account? Please <a class="text-purple-900 font-bold" [routerLink]="['/register']">register</a>!</p>
+  <input (click)="login()" class="text-white bg-red-400 w-full p-[10px] text-[16px] my-[10px] cursor-pointer"
+    type="button" value="Login">
+</form>
